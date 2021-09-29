@@ -20,8 +20,8 @@ spec:
     volumeMounts:
       - mountPath: /centos2
         name: test
-   volumes:
-     - name: test
-       emptyDir: {}
+  volumes:
+    - name: test
+      emptyDir: {}
        
         
