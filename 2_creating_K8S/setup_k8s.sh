@@ -23,6 +23,11 @@ EOF
 setenforce 0
 sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
 
+# Disable firewall
+systemctl stop firewalld
+systemctl disable firewalld
+
+
 # disable swap (assuming that the name is /dev/centos/swap
 sed -i 's/^LABEL=SWAP-xvdb1/#LABEL=SWAP-xvdb1/' /etc/fstab
 swapoff LABEL=SWAP-xvdb1
