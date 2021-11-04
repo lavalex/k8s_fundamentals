@@ -2,7 +2,7 @@
 # kubeadm installation instructions as on
 # https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
 
-yum install -y  yum-utils
+yum install -y  yum-utils git wget bash-completion
 yum-config-manager \
     --add-repo \
     https://download.docker.com/linux/centos/docker-ce.repo
@@ -58,5 +58,5 @@ systemctl restart containerd
 systemctl enable containerd
 
 
-# Start setup of the cluster
+# Start setup of the cluster, only on master
 kubeadm init
