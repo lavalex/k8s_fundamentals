@@ -7,7 +7,7 @@ yum-config-manager \
     --add-repo \
     https://download.docker.com/linux/centos/docker-ce.repo
 
-yum install containerd.io
+yum install -y containerd.io
 
 cat <<EOF > /etc/yum.repos.d/kubernetes.repo
 [kubernetes]
@@ -29,8 +29,8 @@ systemctl disable firewalld
 
 
 # disable swap (assuming that the name is /dev/centos/swap
-sed -i 's/^LABEL=SWAP-xvdb1/#LABEL=SWAP-xvdb1/' /etc/fstab
-swapoff LABEL=SWAP-xvdb1
+# sed -i 's/^LABEL=SWAP-xvdb1/#LABEL=SWAP-xvdb1/' /etc/fstab
+# swapoff LABEL=SWAP-xvdb1
 
 yum install -y tc yum-utils kubelet kubeadm kubectl --disableexcludes=kubernetes
 
