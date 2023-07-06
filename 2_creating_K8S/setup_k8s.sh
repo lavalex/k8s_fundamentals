@@ -32,7 +32,7 @@ systemctl disable firewalld
 # sed -i 's/^LABEL=SWAP-xvdb1/#LABEL=SWAP-xvdb1/' /etc/fstab
 # swapoff LABEL=SWAP-xvdb1
 
-yum install -y route-tc yum-utils kubelet kubeadm kubectl --disableexcludes=kubernetes
+yum install -y iproute-tc yum-utils kubelet kubeadm kubectl --disableexcludes=kubernetes
 
 systemctl enable --now kubelet
 
